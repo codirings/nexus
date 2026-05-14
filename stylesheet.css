@@ -1,0 +1,612 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Overpass Mono', monospace;
+    background-color: #ffffff;
+    color: #000000;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #000000;
+    padding: 20px 40px;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-link {
+    font-family: 'Sometype Mono', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #0099ff;
+    transform: translateY(-2px);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0099ff;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #000000;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 40px 80px;
+    position: relative;
+}
+
+.hero-content {
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.hero-title {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(80px, 15vw, 180px);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 15px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.hero-subtitle {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    text-decoration : none;
+}
+
+.hero-noise {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+/* Placeholder Section */
+.placeholder-section {
+    background-color: #f5f5f5;
+    padding: 80px 40px;
+}
+
+.placeholder-container {
+    
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.placeholder-item {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.placeholder-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.placeholder-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.placeholder-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.placeholder-box {
+    object-fit: contain;
+    overflow: hidden;
+    background-color: #e0e0e0;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.placeholder-box img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.placeholder-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.placeholder-text {
+    font-family: 'Overpass Mono', monospace;
+    font-size: 18px;
+    font-weight: 400;
+    color: #666666;
+}
+
+/* About Section */
+.about-section {
+    background-color: #ffffff;
+    padding: 100px 40px;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-text {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.4s;
+}
+
+.about-intro {
+    font-family: 'Overpass Mono', monospace;
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 400;
+    line-height: 1.8;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.about-description {
+    font-family: 'Overpass Mono', monospace;
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 400;
+    line-height: 1.8;
+    color: #000000;
+}
+
+/* Categories Section */
+.categories-section {
+    background-color: #ffffff;
+    padding: 60px 40px 100px;
+}
+
+.categories-content {
+    max-width: 900px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.6s;
+}
+
+.categories-title {
+    font-family: 'Overpass Mono', monospace;
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 30px;
+    text-transform: lowercase;
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.category-item {
+    border-top: 1px solid #000000;
+    padding: 20px 0;
+}
+
+.category-link {
+    font-family: 'Overpass Mono', monospace;
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 400;
+    color: #000000;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.category-link:hover {
+    color: #0099ff;
+    transform: translateX(10px);
+}
+
+/* Footer */
+.footer {
+    background-color: #0099ff;
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.footer-content {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.8s;
+}
+
+.footer-text {
+    font-family: 'Overpass Mono', monospace;
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-left,
+    .nav-right {
+        gap: 15px;
+    }
+
+    .nav-center {
+        position: relative;
+        left: 0;
+        transform: none;
+        order: -1;
+    }
+
+    .hero {
+        padding: 80px 20px 60px;
+    }
+
+    .hero-title {
+        letter-spacing: 8px;
+    }
+
+    .hero-subtitle {
+        letter-spacing: 4px;
+    }
+
+    .placeholder-section {
+        padding: 60px 20px;
+    }
+
+    .placeholder-container {
+        gap: 30px;
+    }
+
+    .about-section {
+        padding: 60px 20px;
+    }
+
+    .categories-section {
+        padding: 40px 20px 60px;
+    }
+
+    .footer {
+        padding: 60px 20px;
+    }
+}
+
+/* Products */
+
+.products-hero {
+    background: #000;
+    color: white;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products-hero h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: 80px;
+    letter-spacing: 10px;
+}
+
+/* GRID */
+.products-container {
+    background: #f5f5f5;
+    padding: 80px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+/* CARD */
+.product-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    text-align: center;
+    font-family: 'Overpass Mono', monospace;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* IMAGE PLACEHOLDER */
+.product-image {
+    width: 100%;
+    aspect-ratio: 1;
+    background: #ddd;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* DRAG & DROP READY */
+.product-image::after {
+    content: "";
+    position: absolute;
+    color: #888;
+    font-size: 14px;
+}
+
+/* BUTTON */
+.add-to-cart {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background: black;
+    color: white;
+    font-family: 'Sometype Mono', monospace;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background: #0099ff;
+    transform: scale(1.05);
+}
+
+
+/* ACCOUNT PAGE */
+
+.account-hero {
+    background: #000;
+    color: white;
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.account-hero h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(50px, 10vw, 100px);
+    letter-spacing: 10px;
+}
+
+.account-hero p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #cccccc;
+}
+
+/* ACCOUNT CONTAINER */
+
+.account-container {
+    background: #f5f5f5;
+    padding: 80px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+/* ACCOUNT CARD */
+
+.account-card {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.account-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.account-card h2 {
+    font-family: 'Space Mono', monospace;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+/* INFO */
+
+.account-info p,
+.payment-box p,
+.order-box p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* INPUTS */
+
+.account-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.account-card input {
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: 'Overpass Mono', monospace;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.account-card input:focus {
+    border-color: #0099ff;
+}
+
+/* BUTTONS */
+
+.account-btn {
+    margin-top: 20px;
+    padding: 14px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+    font-family: 'Sometype Mono', monospace;
+    transition: 0.3s ease;
+}
+
+.account-btn:hover {
+    background: #0099ff;
+}
+
+/* WARNING */
+
+.warning-card {
+    border-left: 6px solid orange;
+}
+
+.warning-btn {
+    margin-top: 20px;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    background: orange;
+    color: white;
+    cursor: pointer;
+    font-family: 'Sometype Mono', monospace;
+    transition: 0.3s ease;
+}
+
+.warning-btn:hover {
+    opacity: 0.8;
+}
+
+/* DANGER */
+
+.danger-card {
+    border-left: 6px solid red;
+}
+
+.danger-btn {
+    margin-top: 20px;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    background: red;
+    color: white;
+    cursor: pointer;
+    font-family: 'Sometype Mono', monospace;
+    transition: 0.3s ease;
+}
+
+.danger-btn:hover {
+    opacity: 0.8;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .account-container {
+        padding: 60px 20px;
+        grid-template-columns: 1fr;
+    }
+
+    .account-card {
+        padding: 25px;
+    }
+
+}
+

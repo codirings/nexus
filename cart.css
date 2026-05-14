@@ -1,0 +1,178 @@
+        .page-hero {
+            background-color: #000000;
+            min-height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 150px 40px 80px;
+        }
+        
+        .page-title {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(60px, 10vw, 100px);
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+        }
+        
+        .cart-section {
+            padding: 100px 40px;
+            background-color: #ffffff;
+        }
+        
+        .cart-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 60px;
+            align-items: start; /* Keeps summary at the top */
+        }
+        
+        .cart-items {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .cart-item {
+            display: grid;
+            grid-template-columns: 150px 1fr auto;
+            gap: 25px;
+            padding: 25px;
+            background-color: #f5f5f5;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cart-item:hover {
+            transform: translateX(5px);
+            box-shadow: -5px 5px 0 #0099ff;
+        }
+        
+        .item-image {
+            width: 150px;
+            height: 150px;
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .item-image span {
+            font-family: 'Overpass Mono', monospace;
+            font-size: 14px;
+            color: #666666;
+        }
+        
+        .item-details h3 {
+            font-family: 'Overpass Mono', monospace;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+        
+        .item-details p {
+            font-family: 'Overpass Mono', monospace;
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 15px;
+        }
+        
+        .item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .quantity-value {
+            font-family: 'Overpass Mono', monospace;
+            font-size: 16px;
+            font-weight: 600;
+            min-width: 30px;
+        }
+        
+        .item-price {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        
+        .price {
+            font-family: 'Space Mono', monospace;
+            font-size: 24px;
+            font-weight: 700;
+            color: #000000;
+        }
+        
+        .remove-btn {
+            font-family: 'Overpass Mono', monospace;
+            font-size: 14px;
+            color: #ff0000;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        
+        .cart-summary {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 40px;
+            height: auto;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .summary-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-family: 'Overpass Mono', monospace;
+            font-size: 16px;
+        }
+        
+        .summary-total {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #333333;
+        }
+        
+        .summary-total .summary-row {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            font-family: 'Overpass Mono', monospace;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 18px;
+            background-color: #0099ff;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: 0.3s;
+        }
+
+        .checkout-btn:hover { background-color: #007acc; }
+
+        @media (max-width: 968px) {
+            .cart-container { grid-template-columns: 1fr; }
+            .cart-summary { position: static; }
+        }

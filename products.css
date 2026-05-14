@@ -1,0 +1,295 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sometype Mono', monospace;
+            background: #f2f2f2;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: #000;
+            padding: 15px 40px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-left,
+        .nav-right {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .logo {
+            text-decoration: none;
+        }
+
+        /* HEADER */
+        .products-hero {
+            padding: 30px 40px 10px;
+        }
+
+        .products-hero h1 {
+            font-size: 38px;
+        }
+
+        /* PRODUCTS */
+        .products-container {
+            padding: 0 40px 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .section-header {
+            grid-column: 1 / -1;
+            margin-top: 40px;
+        }
+
+        .section-header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .section-header hr {
+            border: 1px solid #ccc;
+        }
+
+        /* CARD */
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 260px;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .product-image img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            font-family: inherit;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .add-to-cart:hover {
+            background: #0099ff;
+        }
+
+        
+        
+        
+        /* ACCOUNT PAGE */
+
+.account-hero {
+    background: #000;
+    color: white;
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.account-hero h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(50px, 10vw, 100px);
+    letter-spacing: 10px;
+}
+
+.account-hero p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #cccccc;
+}
+
+/* ACCOUNT CONTAINER */
+
+.account-container {
+    background: #f5f5f5;
+    padding: 80px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+/* ACCOUNT CARD */
+
+.account-card {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.account-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.account-card h2 {
+    font-family: 'Space Mono', monospace;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+/* INFO */
+
+.account-info p,
+.payment-box p,
+.order-box p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* INPUTS */
+
+.account-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.account-card input {
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: 'Overpass Mono', monospace;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.account-card input:focus {
+    border-color: #0099ff;
+}
+
+/* BUTTONS */
+
+.account-btn {
+    margin-top: 20px;
+    padding: 14px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+    font-family: 'Sometype Mono', monospace;
+    transition: 0.3s ease;
+}
+
+.account-btn:hover {
+    background: #0099ff;
+}
+
+/* WARNING */
+
+.warning-card {
+    border-left: 6px solid orange;
+}
+
+.warning-btn {
+    margin-top: 20px;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    background: orange;
+    color: white;
+    cursor: pointer;
+    font-family: 'Sometype Mono', monospace;
+    transition: 0.3s ease;
+}
+
+.warning-btn:hover {
+    opacity: 0.8;
+}
+
+/* DANGER */
+
+.danger-card {
+    border-left: 6px solid red;
+}
+
+.danger-btn {
+    margin-top: 20px;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    background: red;
+    color: white;
+    cursor: pointer;
+    font-family: 'Sometype Mono', monospace;
+    transition: 0.3s ease;
+}
+
+.danger-btn:hover {
+    opacity: 0.8;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .account-container {
+        padding: 60px 20px;
+        grid-template-columns: 1fr;
+    }
+
+    .account-card {
+        padding: 25px;
+    }
+
+}
