@@ -5,7 +5,6 @@ if (session_status() === PHP_SESSION_NONE) {
 
 $host = "localhost";
 $user = "root";
-$pass = "";
 $db   = "nexus";
 
 try {
